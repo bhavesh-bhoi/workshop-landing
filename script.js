@@ -1,17 +1,8 @@
-// Paste your registration / payment link here (Razorpay, Instamojo, Google Form, etc.).
-// While empty, the "Join / Secure my spot" buttons just scroll to the offer section.
-const REGISTER_URL = '';
-
 (() => {
   const $$ = (s, c = document) => [...c.querySelectorAll(s)];
 
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  $$('[data-register]').forEach(a => {
-    if (!REGISTER_URL) { a.setAttribute('href', '#register'); return; }
-    a.href = REGISTER_URL; a.target = '_blank'; a.rel = 'noopener';
-  });
-  if (REGISTER_URL) $$('a.btn[href="#register"]').forEach(a => { a.href = REGISTER_URL; a.target = '_blank'; a.rel = 'noopener'; });
 
   // Gift cards: flip on tap, with a confetti burst
   const colors = ['#b5191f', '#f2b8ba', '#06312e', '#ffffff', '#e8a33d'];
