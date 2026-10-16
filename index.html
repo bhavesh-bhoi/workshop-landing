@@ -13,7 +13,7 @@
   <link rel="icon" href="logo.webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=DM+Sans:wght@400;500;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
   <script>document.documentElement.classList.add('js')</script>
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -56,36 +56,29 @@
         </div>
 
         <div class="hero__art rise">
-          <svg class="orbits" viewBox="0 0 400 400" aria-hidden="true">
-            <defs><radialGradient id="glow"><stop offset="0" stop-color="#b5191f" stop-opacity=".22"/><stop offset="1" stop-color="#b5191f" stop-opacity="0"/></radialGradient></defs>
-            <circle cx="200" cy="200" r="190" fill="url(#glow)"/>
-            <g class="orb orb--1"><circle cx="200" cy="200" r="120" class="orb__line"/><circle cx="320" cy="200" r="6" class="orb__dot"/></g>
-            <g class="orb orb--2"><circle cx="200" cy="200" r="160" class="orb__line"/><circle cx="200" cy="40" r="5" class="orb__dot orb__dot--ink"/></g>
-            <g class="orb orb--3"><circle cx="200" cy="200" r="195" class="orb__line"/><circle cx="5" cy="200" r="6" class="orb__dot"/></g>
-          </svg>
-          <div class="mockui" aria-hidden="true">
-            <div class="mockui__bar"><i></i><i></i><i></i><span>yourfirm.in</span></div>
-            <div class="mockui__body">
-              <b class="m-logo">Your Distribution Firm</b>
-              <span class="m-line m-line--h" style="--d:.2s"></span>
-              <span class="m-line m-line--h m-line--s" style="--d:.5s"></span>
-              <span class="m-line" style="--d:.8s"></span>
-              <span class="m-line m-line--s" style="--d:1s"></span>
-              <span class="m-btn">Start a SIP</span>
-              <div class="m-chart"><i style="--d:1.2s;--h:34%"></i><i style="--d:1.35s;--h:48%"></i><i style="--d:1.5s;--h:42%"></i><i style="--d:1.65s;--h:66%"></i><i style="--d:1.8s;--h:80%"></i><i style="--d:1.95s;--h:100%"></i></div>
-              <div class="m-foot"><span class="m-arn">AMFI-registered MFD · ARN-00000</span><span class="m-disc">Mutual fund investments are subject to market risks.</span></div>
+          <div class="desk" role="img" aria-label="Animation: a mutual fund distributor website with a guaranteed-returns claim is struck out and corrected, a risk disclaimer is highlighted, the ARN is added and a SEBI and AMFI ready stamp lands on the page">
+            <span class="crop crop--tl"></span><span class="crop crop--tr"></span><span class="crop crop--bl"></span><span class="crop crop--br"></span>
+            <div class="sheet" aria-hidden="true">
+              <div class="sheet__tab"><i></i><i></i><i></i><span>yourfirm.in</span></div>
+              <div class="sheet__body">
+                <div class="hl">
+                  <h4 class="hl__bad">GUARANTEED 18% RETURNS!<span class="hl__strike"></span></h4>
+                  <h4 class="hl__good">Mutual fund investing, explained simply.</h4>
+                </div>
+                <span class="ln"></span><span class="ln ln--s"></span>
+                <span class="sip">Start a SIP</span>
+                <p class="disc"><mark>Mutual fund investments are subject to market risks.</mark></p>
+                <div class="arn">
+                  <svg viewBox="0 0 20 20"><path d="M4 10.5l4 4 8-9"/></svg>
+                  <span>AMFI-registered MFD · ARN-00000</span>
+                </div>
+              </div>
+              <p class="note note--a">no! fix this<svg viewBox="0 0 70 40"><path d="M3 6C28 2 50 12 62 33M62 33l-14-4M62 33l-1-14"/></svg></p>
+              <p class="note note--b">add the disclaimer</p>
+              <p class="note note--c">ARN, always</p>
+              <div class="stamp"><small>SEBI &amp; AMFI</small><b>READY</b></div>
             </div>
           </div>
-          <div class="float float--a">
-            <span class="float__dot"></span><b>Compliance checklist</b>
-            <ul>
-              <li>ARN &amp; EUIN added</li>
-              <li>Risk disclaimer placed</li>
-              <li>Grievance details live</li>
-            </ul>
-          </div>
-          <div class="float float--b"><span class="float__ok">✓</span> ARN-00000 · Valid</div>
-          <div class="float float--c">📈 <b>Local SEO</b> that works</div>
         </div>
       </div>
     </section>
