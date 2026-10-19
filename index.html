@@ -445,6 +445,24 @@
     </div>
   </footer>
 
+  <!-- Appointment / proposal form pop-up -->
+  <dialog class="modal" id="formModal" aria-labelledby="formModalTitle">
+    <div class="modal__bar">
+      <div>
+        <b id="formModalTitle">Request My Website Proposal</b>
+        <small>Tell us about your business and we'll connect with you.</small>
+      </div>
+      <span class="modal__actions">
+        <a id="formOpen" href="https://ainacrm.ainatech.in/f/dbf7d218573d" target="_blank" rel="noopener">Open in new tab ↗</a>
+        <button id="formClose" type="button" aria-label="Close form">✕</button>
+      </span>
+    </div>
+    <div class="modal__body">
+      <span class="modal__loading" aria-hidden="true"></span>
+      <iframe id="formFrame" title="Request a website proposal"></iframe>
+    </div>
+  </dialog>
+
   <script src="script.js"></script>
 </body>
 </html>

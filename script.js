@@ -23,6 +23,22 @@
     }
   }));
 
+  // Proposal form pop-up: every "get proposal / discuss" button opens the form in a modal
+  const FORM_URL = 'https://ainacrm.ainatech.in/f/dbf7d218573d';
+  const modal = document.getElementById('formModal'), frame = document.getElementById('formFrame');
+  if (modal && modal.showModal) {
+    const close = () => { modal.close(); };
+    modal.addEventListener('close', () => { frame.src = 'about:blank'; document.documentElement.classList.remove('modal-open'); });
+    document.getElementById('formClose').addEventListener('click', close);
+    modal.addEventListener('click', e => { if (e.target === modal) close(); });
+    $$('a[href="#contact"], a.btn--light[href*="dbf7d218573d"]').forEach(a => a.addEventListener('click', e => {
+      e.preventDefault();
+      frame.src = FORM_URL;
+      document.documentElement.classList.add('modal-open');
+      modal.showModal();
+    }));
+  }
+
   // Sticky nav border once scrolled
   const nav = document.getElementById('nav');
   const onScroll = () => nav.classList.toggle('scrolled', scrollY > 10);
