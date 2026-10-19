@@ -4,25 +4,6 @@
   document.getElementById('year').textContent = new Date().getFullYear();
 
 
-  // Gift cards: pick ONE card. It flips (once, with confetti) and the others lock.
-  const colors = ['#b5191f', '#f2b8ba', '#06312e', '#ffffff', '#e8a33d'];
-  const gifts = $$('.gift'), hint = document.getElementById('giftHint');
-  gifts.forEach(g => g.addEventListener('click', () => {
-    if (gifts.some(x => x.classList.contains('open'))) return;
-    g.classList.add('open');
-    g.setAttribute('aria-expanded', 'true');
-    gifts.forEach(x => { if (x !== g) { x.classList.add('locked'); x.disabled = true; } });
-    if (hint) hint.textContent = 'Your gift is unlocked! The other cards are now locked 🔒';
-    if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    for (let i = 0; i < 26; i++) {
-      const c = document.createElement('i'), a = Math.random() * Math.PI * 2, d = 70 + Math.random() * 110;
-      c.className = 'confetti';
-      c.style.cssText = `--x:${Math.cos(a) * d}px;--y:${Math.sin(a) * d - 20}px;--r:${Math.random() * 720 - 360}deg;background:${colors[i % colors.length]}`;
-      g.appendChild(c);
-      setTimeout(() => c.remove(), 1000);
-    }
-  }));
-
   // Sticky nav border once scrolled
   const nav = document.getElementById('nav');
   const onScroll = () => nav.classList.toggle('scrolled', scrollY > 10);
