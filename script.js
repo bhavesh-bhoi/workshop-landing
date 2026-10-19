@@ -27,6 +27,17 @@
   const FORM_URL = 'https://ainacrm.ainatech.in/f/dbf7d218573d';
   const modal = document.getElementById('formModal'), frame = document.getElementById('formFrame');
   if (modal && modal.showModal) {
+    // Fit the form without inner scrolling: size to its natural height, scale down only if the window is shorter
+    const FORM_H = 740;
+    const fit = () => {
+      const body = modal.querySelector('.modal__body');
+      const h = body.clientHeight, s = Math.min(1, h / FORM_H);
+      frame.style.transformOrigin = 'top left';
+      frame.style.transform = s < 1 ? `scale(${s})` : '';
+      frame.style.width = s < 1 ? `${100 / s}%` : '100%';
+      frame.style.height = s < 1 ? `${h / s}px` : '100%';
+    };
+    addEventListener('resize', () => { if (modal.open) fit(); });
     const close = () => { modal.close(); };
     modal.addEventListener('close', () => { frame.src = 'about:blank'; document.documentElement.classList.remove('modal-open'); });
     document.getElementById('formClose').addEventListener('click', close);
@@ -36,6 +47,7 @@
       frame.src = FORM_URL;
       document.documentElement.classList.add('modal-open');
       modal.showModal();
+      fit();
     }));
   }
 
