@@ -291,3 +291,8 @@ details p{padding:0 22px 20px;color:var(--ink-soft);font-size:15px}
 }
 @media (max-width:960px){.hero__art{max-width:440px}.note--a{right:-6px}.note--b{left:-4px}}
 @media (max-width:480px){.desk{padding:36px 22px 46px}.hl h4{font-size:18px}.hl{min-height:52px}.stamp b{font-size:24px}.note{font-size:20px}}
+
+/* Gift cards: only one can be picked */
+.gift.locked{cursor:not-allowed;opacity:.45;filter:grayscale(.6);animation:none}
+.gift.locked:hover .gift__inner{transform:none}
+.gift.open{cursor:default}

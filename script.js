@@ -4,12 +4,16 @@
   document.getElementById('year').textContent = new Date().getFullYear();
 
 
-  // Gift cards: flip on tap, with a confetti burst
+  // Gift cards: pick ONE card. It flips (once, with confetti) and the others lock.
   const colors = ['#b5191f', '#f2b8ba', '#06312e', '#ffffff', '#e8a33d'];
-  $$('.gift').forEach(g => g.addEventListener('click', () => {
-    const open = g.classList.toggle('open');
-    g.setAttribute('aria-expanded', open);
-    if (!open || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const gifts = $$('.gift'), hint = document.getElementById('giftHint');
+  gifts.forEach(g => g.addEventListener('click', () => {
+    if (gifts.some(x => x.classList.contains('open'))) return;
+    g.classList.add('open');
+    g.setAttribute('aria-expanded', 'true');
+    gifts.forEach(x => { if (x !== g) { x.classList.add('locked'); x.disabled = true; } });
+    if (hint) hint.textContent = 'Your gift is unlocked! The other cards are now locked 🔒';
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     for (let i = 0; i < 26; i++) {
       const c = document.createElement('i'), a = Math.random() * Math.PI * 2, d = 70 + Math.random() * 110;
       c.className = 'confetti';
